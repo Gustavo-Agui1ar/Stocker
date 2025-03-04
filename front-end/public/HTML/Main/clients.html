@@ -1,0 +1,115 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../Assets/Icons/Stocker.png">
+    <link rel="stylesheet" href="../../CSS/colors.css">
+    <link rel="stylesheet" href="../../CSS/clients.css">
+    <link rel="stylesheet" href="../../CSS/product.css">
+    <link rel="stylesheet" href="../../CSS/components/nav.css">
+    <link rel="stylesheet" href="../../CSS/components/item.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Stocker Products</title>
+  </head>
+
+  <body>
+
+    <header class="header defaultBgColor">
+      <nav class="flexNav">
+        <a class="logo" href="/">Stocker</a>
+        <div class="nav-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list simpleFlex">
+          <li><a href="./home.html">Inicio</a></li>
+          <li><a href="./products.html">Produtos</a></li>
+          <li><a href="./clients.html">Clientes</a></li>
+          <li><a href="./provider.html">Fornecedores</a></li>
+          <li><a href="./register.html">Cadastrar</a></li>
+          <li><a href="./account.html">Conta</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main flexCenter flex-column">
+      <div class="flexCenter flex-column main-content">
+        <div class="flexCenter flex-column container-search">
+          <form class="flexCenter form">
+            <input type="text" name="name" placeholder="Nome do Cliente">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="cnpj" placeholder="CNPJ">
+            <input type="text" name="store" placeholder="Loja">
+          </form>
+
+          <ul class="list list-button flexCenter">
+            <li><button class="btn-primary" id="search">Buscar</button></li>
+            <li><button class="btn-primary" id="clear">Limpar</button></li>
+          </ul>
+        </div>
+
+        <div class="flexCenter flex-column container-table">
+          <div class="div-table">
+            <table class="table">
+              <thead>
+                <th id="name">Nome do Cliente</th>
+                <th id="email">Email</th>
+                <th id="cnpj">CNPJ</th>
+                <th id="store">Loja</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="flexCenter flex-column container-client hidden">
+          <div class="flexCenter flex-column logo_enterprise">
+            <p id="name-store"></p>
+          </div>
+          <div class="flexCenter flex-column client-info">
+            <ul class="list  flexCenter list-clients">
+              <li class="container-info" id="name">
+                <p class="layout-info">Nome do Cliente</p>
+                <p  class="info-client"></p>
+              </li>
+              <li class="container-info" id="phone">
+                <p class="layout-info">Telefone</p>
+                <p  class="info-client"></p>
+              </li>
+              <li class="container-info" id="email">
+                <p class="layout-info">Email</p>
+                <p  class="info-client"></p>
+              </li>
+              <li class="container-info" id="address">
+                <p class="layout-info">Endereço</p>
+                <p  class="info-client"></p>
+              </li>
+              <li class="container-info" id="cnpj">
+                <p class="layout-info">CNPJ</p>
+                <p  class="info-client"></p>
+              </li>
+              <li class="container-info" id="store">
+                <p class="layout-info">Loja</p>
+                <p  class="info-client"></p>
+              </li>
+            </ul>
+            <div class="flexCenter flex-column slider">
+              <p>Pedidos pendentes</p>
+              <div class="container-order">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary back">voltar</button>
+      </div>
+    </main>
+    <script src="../../JS/nav.js"></script>
+    <script src="../../JS/item/item.js"></script>
+    <script src="../../JS/item/InfiniteScroll.js"></script>
+    <script type="module" src="../../JS/search/clientsSearch.js"></script>
+  </body>
+
+  </html>

@@ -1,0 +1,180 @@
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flexCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.container-registers {
+  width: 80%;
+  height: 80%;
+}
+
+.nav-buttons {
+  width: 100%;
+  height: 5%;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid var(--grey-500);
+  border-bottom: none;
+  background-color: var(--grey-200);
+}
+
+.content-registers {
+  width: 100%;
+  height: 95%;
+  border: 1px solid var(--grey-500);
+  border-top: none;
+  background-color: var(--grey-200);
+  border-radius: 0 0 10px 10px;
+}
+
+.btn-primary {
+  background-color: var(--green-400);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.list-btn{
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--green-400);
+}
+
+.list-btn li{
+  width: 33.333%;
+}
+
+.list-btn li button{
+  width: 100%;
+  height: 100%;
+  background-color: var(--green-400);
+  color: var(--white);
+  border-bottom: 1px solid var(--grey-500);
+  cursor: pointer;
+}
+
+.active-btn{
+  background-color: var(--grey-200) !important;
+  color: var(--black-300) !important;
+  border-radius: 5px 5px 0 0 !important;
+  border-bottom: none !important;
+}
+
+
+.list-btn li:first-child button{
+  border-radius: 10px 0 0 0;
+}
+
+.list-btn li:last-child button{
+  border-radius: 0 10px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.register {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.form {
+  height: 80%;
+  flex-wrap: wrap;
+  margin: auto 0px;
+}
+
+.form-group {
+  position: relative;
+  min-width: 200px;
+  width: 55%;
+  margin: 0 auto;
+}
+
+.form-group input:focus-within {
+  outline: none;
+}
+
+.form-group input {
+  min-width: 200px;
+  width: 100%;
+  height: 25px;
+  border: 1px solid var(--grey-500);
+}
+
+.input-file{
+  display: none;
+}
+
+.label-file > span {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.label-file{
+  width: 100%;
+  height: 100px;
+  border: 1px dashed currentColor;
+  background: var(--grey-400);
+  color: var(--grey-600);
+  cursor: pointer;
+}
+
+.label-file.hover {
+  background-color: var(--grey-200);
+  border-color: var(--blue-500);
+}
+
+.label-form {
+  width: 100%;
+}
+
+.btn {
+  margin: auto 0px;
+  border-radius: 6px;
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: var(--green-600);
+}
+
+.product .form, .order .form {
+  padding: 100px 0px;
+}
+
+.provider .form {
+  padding: 60px 0px;
+}
+
+.search {
+  position: absolute; 
+  top: 100%; 
+  left: 0;
+  width: 100%; 
+  max-height: 150px;
+  overflow-y: auto; 
+  list-style: none;
+  background-color: var(--white);
+  z-index: 10; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.search li {
+  padding:10px;
+  cursor: pointer;
+  border-bottom: 0.5px solid var(--grey-500);
+}

@@ -1,0 +1,47 @@
+
+.orderitem {
+  height: 120px;
+  min-width: 280px;
+  width: 280px;
+  border-radius: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 10px 25px;
+  margin: 10px;
+  user-select: none;
+}
+
+.primary-text-item{
+  justify-content: flex-start;
+  font-weight: 450;
+  width: 100%;
+}
+
+.infoOrder{
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 14px;
+  width: 90%;
+}
+
+.primary-p {
+  padding-left: 10px;
+}
+
+.btn-none {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+i {
+  font-size: 16px;
+}
+
+.btn-none:hover {
+  cursor: pointer;
+}

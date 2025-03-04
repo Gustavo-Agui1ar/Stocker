@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../../Assets/Icons/Stocker.png">
+  <link rel="stylesheet" href="../../CSS/colors.css">
+  <link rel="stylesheet" href="../../CSS/product.css">
+  <link rel="stylesheet" href="../../CSS/components/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Stocker Products</title>
+</head>
+
+<body>
+
+  <header class="header defaultBgColor">
+    <nav class="flexNav">
+      <a class="logo" href="/">Stocker</a>
+      <div class="nav-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list simpleFlex">
+        <li><a href="./home.html">Inicio</a></li>
+        <li><a href="./products.html">Produtos</a></li>
+        <li><a href="./clients.html">Clientes</a></li>
+        <li><a href="./provider.html">Fornecedores</a></li>
+        <li><a href="./register.html">Cadastrar</a></li>
+        <li><a href="./account.html">Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main flexCenter flex-column">
+    <div class="flexCenter flex-column main-content">
+      <div class="flexCenter flex-column container-search">
+        <form class="flexCenter form">
+          <input type="number" name="code" placeholder="Código do Produto">
+          <input type="text" name="name" placeholder="Nome do Produto">
+          <input type="number" step="0.01" name="price" placeholder="preco">
+          <input type="text" name="category" placeholder="Categoria">
+          <input type="text" name="provider" placeholder="Fornecedor">
+          <input type="number" name="qty" placeholder="Qtd em Estoque">
+        </form>
+
+        <ul class="list list-button flexCenter">
+          <li><button class="btn-primary" id="search">Buscar</button></li>
+          <li><button class="btn-primary" id="clear">Limpar</button></li>
+        </ul>
+      </div>
+
+      <div class="flexCenter flex-column container-table">
+        <div class="div-table">
+          <table class="table">
+            <thead>
+              <th id="code">Código</th>
+              <th id="name">Nome do Produto</th>
+              <th id="price">Preço</th>
+              <th id="category">Categoria</th>
+              <th id="qty">Qtd em Estoque</th>
+              <th id="provider">Fornecedor</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      
+      </div>
+
+    </div>
+  </main>
+  <script type="module" src="../../JS/search/searchPagination.js"></script>
+  <script src="../../JS/nav.js"></script>
+</body>
+
+</html>

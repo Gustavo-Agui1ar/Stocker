@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../../Assets/Icons/Stocker.png">
+  <link rel="stylesheet" href="../../CSS/colors.css">
+  <link rel="stylesheet" href="../../CSS/clients.css">
+  <link rel="stylesheet" href="../../CSS/product.css">
+  <link rel="stylesheet" href="../../CSS/components/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Stocker Products</title>
+</head>
+
+<body>
+
+  <header class="header defaultBgColor">
+    <nav class="flexNav">
+      <a class="logo" href="/">Stocker</a>
+      <div class="nav-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list simpleFlex">
+        <li><a href="./home.html">Inicio</a></li>
+        <li><a href="./products.html">Produtos</a></li>
+        <li><a href="./clients.html">Clientes</a></li>
+        <li><a href="./provider.html">Fornecedores</a></li>
+        <li><a href="./register.html">Cadastrar</a></li>
+        <li><a href="./account.html">Conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main flexCenter flex-column">
+    <div class="flexCenter flex-column main-content">
+      <div class="flexCenter flex-column container-search">
+        <form class="flexCenter form">
+          <input type="text" name="nome_produto" placeholder="Nome do Fornecedor">
+          <input type="text" name="fornecedor" placeholder="Endereço">
+          <input type="text" name="categoria" placeholder="Email">
+          <input type="number" name="qtd_estoque" placeholder="Pedidos Pendentes">
+        </form>
+
+        <ul class="list list-button flexCenter">
+          <li><button class="btn-primary" id="search">Buscar</button></li>
+          <li><button class="btn-primary" id="clear">Limpar</button></li>
+        </ul>
+      </div>
+
+      <div class="flexCenter flex-column container-table">
+        <div class="div-table">
+          <table class="table">
+            <thead>
+              <th>Nome do Fornecedor</th>
+              <th>Endereço</th>
+              <th>Email</th>
+              <th>Pedidos Pendentes</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+          <ul class="index-buttons list flexCenter">
+            <li><button class="btn-primary"><i class="fa-solid fa-chevron-left icon"></i></button></li>
+            <li><button class="btn-primary">1</button></li>
+            <li><button class="btn-primary"><i class="fa-solid fa-chevron-right icon"></i></button></li>
+          </ul>
+      </div>
+      <div class="flexCenter flex-column container-client hidden">
+        <div class="flexCenter flex-column logo_enterprise">
+          <p>Fornecedor</p>
+        </div>
+        <div class="flexCenter client-info">
+          <ul class="list  list-clients">
+            <li class="layout-info">Nome do Fornecedor</li>
+            <p></p>
+            <li class="layout-info">Email</li>
+            <p></p>
+            <li class="layout-info">Endereço</li>
+            <p></p>
+            <li class="layout-info">Pedidos pendentes</li>
+            <p></p>
+          </ul>
+        </div>
+        <button class="btn-primary back">voltar</button>
+    </div>
+  </main>
+  <script src="../../JS/nav.js"></script>
+  <script type="module" src="../../JS/search/pagination.js"></script>
+  <script src="../../JS/search/loadImage.js"></script>
+</body>
+
+</html>
