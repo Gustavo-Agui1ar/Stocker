@@ -55,7 +55,7 @@ Sinta-se à vontade para contribuir! Para isso, siga os seguintes passos:
    
 ---
 **Autor:** Gustavo Goetten Aguilar  
-**Contato:** [seu-email@email.com](mailto:gustavogoetten@alunos.utfpr.edu.br)
+**Contato:** [gustavogoetten@alunos.utfpr.edu.br](mailto:gustavogoetten@alunos.utfpr.edu.br)
 
 
 Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
