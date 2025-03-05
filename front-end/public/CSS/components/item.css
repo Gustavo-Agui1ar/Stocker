@@ -1,17 +1,18 @@
 
 .orderitem {
-  height: 120px;
+  max-width: 180px;
   min-width: 280px;
   width: 280px;
   border-radius: 10px;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 10px 25px;
+  padding: 15px 25px 15px 10px;
   margin: 10px;
   user-select: none;
 }
 
 .primary-text-item{
+  font-size: 16px;
   justify-content: flex-start;
   font-weight: 450;
   width: 100%;

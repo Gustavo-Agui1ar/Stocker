@@ -26,15 +26,19 @@ public class Order {
     @JoinColumn(name = "provider_id")
     private Provider provider;
 
+    private String orderName;
     private Double price;
+    private Integer quantity;
     private LocalDate date;
 
     public Order() {
     }
 
-    public Order(@NotNull Product product,@NotNull Client client, @NotNull Provider provider, Double price, LocalDate date) {
+    public Order(@NotNull Product product,@NotNull Client client,String orderName ,@NotNull Provider provider, Double price, Integer qty, LocalDate date) {
         this.product = product;
         this.provider = provider;
+        this.quantity = qty;
+        this.orderName = orderName;
         this.client = client;
         this.price = price;
         this.date = date;
@@ -83,5 +87,21 @@ public class Order {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getOrderName() {
+        return orderName;
+    }
+
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
     }
 }

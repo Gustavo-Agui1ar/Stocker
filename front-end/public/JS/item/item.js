@@ -1,4 +1,4 @@
-class Item {
+export default class Item {
   constructor(name, cod, category, quantity, orderDate, containerInsert) {
     this.name = name;
     this.vectorInfo = [cod, category, quantity, orderDate];
@@ -74,8 +74,8 @@ class Item {
 
 
   calcPassTime() {
-    const dateParts = this.vectorInfo[3].split('/');
-    const date1 = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+    const dateParts = this.vectorInfo[3].split('-');
+    const date1 = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
     const diff1 = Math.abs(Date.now() - date1.getTime());
 
     return  Math.ceil(diff1 / (1000 * 60 * 60 * 24));
@@ -116,5 +116,3 @@ class Item {
     this.containerInsert.append(this.item);
   }
 }
-
-const container = document.querySelector('.container-order');

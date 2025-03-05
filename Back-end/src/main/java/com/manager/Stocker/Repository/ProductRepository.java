@@ -16,5 +16,6 @@ public interface ProductRepository  extends JpaRepository<Product, Integer> {
 
     Optional<Product> findByNameAndCategory(String name, String category);
 
-
+    @Query("SELECT p.name, p.category  FROM Product AS p")
+    List<Object> findAllNames();
 }

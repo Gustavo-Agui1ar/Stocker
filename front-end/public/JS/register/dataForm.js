@@ -14,6 +14,7 @@ class DataForm {
       this.updateData();
       this.form.addEventListener('input', () => {
         this.updateData();
+        console.log(this.data);
       });
     }
 

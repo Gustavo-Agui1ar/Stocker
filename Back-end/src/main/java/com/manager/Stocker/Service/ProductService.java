@@ -101,4 +101,11 @@ public class ProductService {
     public Optional<Product> findByProductNameAndCategory(String name, String category) {
         return productRepository.findByNameAndCategory(name, category);
     }
+
+    public ResponseEntity<?> findAllNames() {
+        List<Object> list = productRepository.findAllNames();
+        if(list.isEmpty())
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("No products found");
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+    }
 }

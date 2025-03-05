@@ -29,5 +29,9 @@ public class ProductsController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/All")
+    public ResponseEntity<?> getAllNames() {
+        return productService.findAllNames();
+    }
 
 }

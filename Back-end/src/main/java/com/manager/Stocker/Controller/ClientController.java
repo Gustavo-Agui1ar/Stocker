@@ -4,6 +4,7 @@ import com.manager.Stocker.Model.Dto.QueryResponse.ResponseSimpleClient;
 import com.manager.Stocker.Model.Entity.Client;
 import com.manager.Stocker.Model.Entity.ImageClient;
 import com.manager.Stocker.Service.ClientService;
+import com.manager.Stocker.Service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,8 +19,12 @@ import java.util.Map;
 public class ClientController {
 
     ClientService clientService;
+    OrderService orderService;
 
-    public ClientController(ClientService clientService) {this.clientService = clientService;}
+    public ClientController(ClientService clientService, OrderService orderService) {
+        this.clientService = clientService;
+        this.orderService = orderService;
+    }
 
     @GetMapping("/search")
     public ResponseEntity<Map<String, Object>> getClientsByFilter(@RequestParam Map<String, Object> request) {
@@ -36,6 +41,11 @@ public class ClientController {
     @GetMapping("/getImage")
     public ResponseEntity<?> getImage(@RequestParam("email") String email) {
         return clientService.getImage(email);
+    }
+
+    @GetMapping("/getItems")
+    public ResponseEntity<?> getItemsOrder(@RequestParam("email") String email) {
+        return orderService.getItemsByClient(email);
     }
 
     @GetMapping("/All")

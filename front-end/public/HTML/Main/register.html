@@ -11,25 +11,6 @@
 </head>
 <body>
   
-  <header class="header defaultBgColor">
-    <nav class="flexNav">
-      <a class="logo" href="/">Stocker</a>
-      <div class="nav-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-      <ul class="nav-list simpleFlex">
-        <li><a href="./home.html">Inicio</a></li>
-        <li><a href="./products.html">Produtos</a></li>
-        <li><a href="./clients.html">Clientes</a></li>
-        <li><a href="./clients.html">Fornecedores</a></li>
-        <li><a href="./register.html">Cadastrar</a></li>
-        <li><a href="./account.html">Conta</a></li>
-      </ul>
-    </nav>
-  </header>
-  
   <main class="main flex flexCenter">
     <div class="container-registers">
       <div class="nav-buttons">
@@ -199,9 +180,17 @@
             <form action="" class="flex flexCenter form">
               
               <div class="flex form-group">
+                <label for="name"class="label-form">
+                  <p>Nome do Pedido</p>
+                  <input type="text" name="name" id="name" required>
+                </label>
+              </div>
+             
+              <div class="flex form-group">
                 <label for="product"class="label-form">
                   <p>Produto</p>
                   <input type="text" name="product" id="product" required>
+                  <ul class="search search_product"></ul>
                 </label>
               </div>
               
@@ -245,6 +234,7 @@
       </div>
     </div>
   </main>
+  <script src="../../JS/navBar/navbar.js"></script>
   <script src="../../JS/register/searchEntity.js"></script>
   <script type="module" src="../../JS/register/handle_buttons.js"></script>
   <script src="../../JS/register/navButton.js"></script>

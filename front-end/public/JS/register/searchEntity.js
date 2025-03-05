@@ -49,10 +49,12 @@ class DinamicSearch {
         li.style.display = "none";
         li.addEventListener("click", () => {
           this.input.value = li.textContent;
+          
+          const inputEvent = new Event('input', { bubbles: true });
+          this.input.dispatchEvent(inputEvent);   
+
           this.hideItems(this.searchList.getElementsByTagName("li"));
         });
-        console.log(li);
-        console.log(this.searchList);
         this.searchList.appendChild(li);
     });
   }
@@ -64,17 +66,44 @@ class DinamicSearch {
   }
 }
 
-const searchInstance = new DinamicSearch("http://localhost:8080/provider/All",
-                                         document.querySelector(".order #provider"), 
-                                         document.querySelector(".order .search_provider"));
-searchInstance.init(searchInstance.url);
+class SearchProduct extends DinamicSearch {
+  constructor(url, input, searchList, categoryContainer) {
+    super(url, input, searchList);
+    this.categoryContainer = categoryContainer;
+  }
 
-const searchInstance2 = new DinamicSearch("http://localhost:8080/client/All",
-                                          document.querySelector(".order #client"),
-                                          document.querySelector(".order .search_client"));
-searchInstance2.init(searchInstance2.url);
+  initListValues() {
+    this.data.forEach(element => {
+        const li = document.createElement("li");
+        li.textContent = element[0];
+        li.style.display = "none";
+        li.id = element[1];
+        li.addEventListener("click", () => {
+          this.input.value = li.textContent;
+          this.categoryContainer.value = li.id;
+          
+          const inputEvent = new Event('input', { bubbles: true });
+          this.input.dispatchEvent(inputEvent);
+          this.categoryContainer.dispatchEvent(inputEvent);
 
-const searchInstance3 = new DinamicSearch("http://localhost:8080/provider/All",
-                                          document.querySelector(".product #provider"),
-                                          document.querySelector(".product .search_provider"));
-searchInstance3.init(searchInstance3.url);
+          this.hideItems(this.searchList.getElementsByTagName("li"));
+        });
+        this.searchList.appendChild(li);
+
+    });
+  }
+} 
+
+const searchInstances = [
+  new DinamicSearch("http://localhost:8080/provider/All", document.querySelector(".order #provider"), document.querySelector(".order .search_provider")),
+  new DinamicSearch("http://localhost:8080/client/All", document.querySelector(".order #client"), document.querySelector(".order .search_client")),
+  new DinamicSearch("http://localhost:8080/provider/All", document.querySelector(".product #provider"), document.querySelector(".product .search_provider"))
+];
+
+searchInstances.forEach(instance => instance.init());
+
+const dinamicSearchProducts = new SearchProduct("http://localhost:8080/products/All", 
+                                                document.querySelector(".order #product"),
+                                                document.querySelector(".order .search_product"),
+                                                document.querySelector(".order #category"));
+dinamicSearchProducts.init();

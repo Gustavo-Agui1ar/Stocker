@@ -16,7 +16,6 @@ class BtnSendData {
         this.sendDataClient();
       else
         this.sendData();
-      this.dataForm.clearForm();
     });
   }
   
@@ -32,11 +31,7 @@ class BtnSendData {
       body: JSON.stringify(this.dataForm.getData()),
     });
 
-    if (response.ok) {
-      console.log('Data sent successfully');
-    } else {
-      console.log('Failed to send data');
-    }
+    this.responseLog(response);
   }
 
   async sendDataClient() {
@@ -69,6 +64,7 @@ class BtnSendData {
 
   responseLog(response) {
     if (response.ok) {
+      this.dataForm.clearForm();
       console.log('Data sent successfully');
     } else {
       console.log('Failed to send data');

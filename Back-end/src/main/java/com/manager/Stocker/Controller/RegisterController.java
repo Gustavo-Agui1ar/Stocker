@@ -1,7 +1,7 @@
 package com.manager.Stocker.Controller;
 
 import com.manager.Stocker.Model.Dto.ClientDTO;
-import com.manager.Stocker.Model.Dto.OrderDto;
+import com.manager.Stocker.Model.Dto.OrderDTO;
 import com.manager.Stocker.Model.Dto.ProductDTO;
 import com.manager.Stocker.Model.Dto.ProviderDTO;
 import com.manager.Stocker.Service.ClientService;
@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequestMapping("/register")
@@ -58,7 +55,7 @@ public class RegisterController {
     }
 
     @PostMapping("/order")
-    ResponseEntity<?> registerOrder(@RequestBody OrderDto dto) {
+    ResponseEntity<?> registerOrder(@RequestBody OrderDTO dto) {
         return orderService.addOrder(dto);
     }
 

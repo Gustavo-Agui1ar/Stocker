@@ -79,3 +79,7 @@
       width: 100%;
     }
 }
+
+.loading {
+  pointer-events: none;
+}
