@@ -56,10 +56,10 @@ public interface ProductProviderRepository  extends JpaRepository<ProviderProduc
                                      @Param("product_id") Integer product_id);
 
     @Query("""
-        SELECT pp.price
+        SELECT pp
         FROM ProviderProduct pp
-        WHERE pp.product.id = :product_id AND pp.provider.id = :provider_id   
+        WHERE pp.product.id = :product_id AND pp.provider.id = :provider_id
     """)
-    Optional<Double> findPriceByProductAndProvider(@Param("product_id") int productId,
+    Optional<ProviderProduct> findByProductAndProvider(@Param("product_id") int productId,
                                                    @Param("provider_id") int providerId);
 }

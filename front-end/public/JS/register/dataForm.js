@@ -14,7 +14,6 @@ class DataForm {
       this.updateData();
       this.form.addEventListener('input', () => {
         this.updateData();
-        console.log(this.data);
       });
     }
 
@@ -35,13 +34,16 @@ class DataForm {
         } else
             this.data[input.name] = input.value;
       });
+      console.log(this.data);
     }
 
     clearForm() {
       const elements = this.form.querySelectorAll(`.form-group input`);
+      const event = new Event('input', {bubbles: true});
 
       elements.forEach((input) => {
         input.value = '';
+        input.dispatchEvent(event);
       });
 
       this.img.clearFile();

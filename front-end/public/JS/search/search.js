@@ -21,6 +21,11 @@ export default class Search {
   clearTable() {
     // Clear the table
     const tbody = this.table.gettbody();
+    const dataForm = document.querySelectorAll('.form input');
+
+    dataForm.forEach(element => {
+      element.value = '';
+    });
 
     while(tbody.firstChild) {
       tbody.removeChild(tbody.firstChild);

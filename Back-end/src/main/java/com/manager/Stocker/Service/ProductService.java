@@ -34,13 +34,19 @@ public class ProductService {
 
     public ResponseEntity<String> addProduct(ProductDTO dto) {
 
-        if(dto.name().isEmpty() || dto.category().isEmpty() || dto.price() == 0)
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid data");
+        if(dto.name().isEmpty())
+            return new ResponseEntity<>("Preencha o campo nome", HttpStatus.BAD_REQUEST);
+        
+        if(dto.category().isEmpty())
+            return new ResponseEntity<>("Preencha o campo categoria", HttpStatus.BAD_REQUEST);
+
+        if(dto.price() == 0)
+            return new ResponseEntity<>("Preencha o campo price", HttpStatus.BAD_REQUEST);
 
         Optional<Provider> provider = providerService.getProviderByEnterprise(dto.provider());
 
         if(provider.isEmpty())
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Provider not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fornecedor não cadastrado em Stocker");
 
         Optional<Product> product = productRepository.findByNameAndCategory(dto.name(),
                                                                 dto.category());
@@ -52,7 +58,7 @@ public class ProductService {
                                             dto.price(),
                                             dto.qty());
                 ppRepository.save(pp);
-                return ResponseEntity.status(HttpStatus.CREATED).body("Product created");
+                return ResponseEntity.status(HttpStatus.CREATED).body("Produto cadastrado");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -62,7 +68,7 @@ public class ProductService {
                                                      dto.price(), dto.qty());
             try {
                 ppRepository.save(pp);
-                return ResponseEntity.status(HttpStatus.CREATED).body("Product created");
+                return ResponseEntity.status(HttpStatus.CREATED).body("Produto cadastrado");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());

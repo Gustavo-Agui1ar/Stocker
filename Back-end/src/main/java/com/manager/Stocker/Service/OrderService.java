@@ -39,22 +39,31 @@ public class OrderService {
         Optional<Product>  product  = productService.findByProductNameAndCategory(dto.product(), dto.category());
 
         if(client.isEmpty())
-            return new ResponseEntity<>("Client not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Cliente inválido", HttpStatus.NOT_FOUND);
         if(product.isEmpty())
-            return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Produto inválido", HttpStatus.NOT_FOUND);
         if(provider.isEmpty())
-            return new ResponseEntity<>("Provider not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Fornecedor inválido", HttpStatus.NOT_FOUND);
 
-        Optional<Double> price = ppRepository.findPriceByProductAndProvider(product.get().getId(), provider.get().getId());
+        Optional<ProviderProduct> pp = ppRepository.findByProductAndProvider(product.get().getId(), provider.get().getId());
 
-        if(price.isEmpty())
-            return new ResponseEntity<>("price not defined", HttpStatus.NOT_FOUND);
+        if (dto.qty() == null)
+            return new ResponseEntity<>("Quantidade não definida", HttpStatus.NOT_FOUND);
 
-        Double totalPrice = price.get() * dto.qty();
+        if(dto.name() == null)
+            return new ResponseEntity<>("nome do pedido não definida", HttpStatus.NOT_FOUND);
 
-        Order order = new Order(product.get(), client.get(), dto.orderName(), provider.get(), totalPrice, dto.qty(), LocalDate.now());
+        if(pp.isEmpty())
+            return new ResponseEntity<>("Este Fornecedor não fornece este produto", HttpStatus.NOT_FOUND);
+
+        if(pp.get().getPrice() == null)
+            return new ResponseEntity<>("Preço não definido para este produto", HttpStatus.NOT_FOUND);
+
+        Double totalPrice = pp.get().getPrice() * dto.qty();
+
+        Order order = new Order(product.get(), client.get(), dto.name(), provider.get(), totalPrice, dto.qty(), LocalDate.now());
         orderRepository.save(order);
-        return null;
+        return new ResponseEntity<>("Produto criado com sucesso", HttpStatus.CREATED);
     }
 
     public ResponseEntity<?> getItemsByClient(String email) {

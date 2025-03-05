@@ -178,3 +178,16 @@
   cursor: pointer;
   border-bottom: 0.5px solid var(--grey-500);
 }
+
+.info-text {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
