@@ -8,13 +8,16 @@
 O **Stocker** é um sistema de gerenciamento de estoque simples desenvolvido para fims de aprendizado, este conta com a visualização e cadastro de fornecedores e pedidos. No momento, apenas a parte administrativa foi implementada.
 
 ## Funcionalidades
-- **Cadastro de Clientes**: Registre e gerencie informações de clientes.
-- 
+- **Cadastro de Clientes**: Registre e gerencie informações de clientes. <p></p>
+  <img height=250px width=auto src="./img_rd/register.png"/>
+
 - **Cadastro de Produtos**: Controle seu estoque cadastrando produtos.
+  <img height=250px src="./img_rd/table-product.png"/>
 - **Cadastro de Fornecedores**: Mantenha informações de fornecedores organizadas.
+  <img height=250px width=auto src="./img_rd/provider.png"/>
 - **Gerenciamento de Pedidos**: Registre pedidos e acompanhe seu status.
 - **Visualização de Produtos e Clientes**: Consulte de forma rápida os produtos e clientes cadastrados.
-
+  <img height=250px src="./img_rd/client-info.png"/>
 ## Tecnologias Utilizadas
 - **Frontend**: HTML, CSS e JavaScript (Vanilla)
 - **Backend**: Java com Spring Boot
@@ -52,7 +55,7 @@ Sinta-se à vontade para contribuir! Para isso, siga os seguintes passos:
    
 ---
 **Autor:** Gustavo Goetten Aguilar  
-**Contato:** [seu-email@email.com](mailto:seu-email@email.com)
+**Contato:** [seu-email@email.com](mailto:gustavogoetten@alunos.utfpr.edu.br)
 
 
 Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
