@@ -5,7 +5,7 @@
 <h1 align="center">Stocker - Projeto de gerenciamento simples de estoque</h1>
 
 ## Descrição
-O **Stocker** é um sistema de gerenciamento de estoque simples desenvolvido para fims de aprendizado, este conta com a visualização e cadastro de fornecedores e pedidos. No momento, apenas a parte administrativa foi implementada.
+O **Stocker** é um sistema de gerenciamento de estoque simples desenvolvido para fins de aprendizado, este conta com a visualização e cadastro de fornecedores e pedidos. No momento, apenas a parte administrativa foi implementada.
 
 ## Funcionalidades
 - **Cadastro de Clientes**: Registre e gerencie informações de clientes. <p></p>
